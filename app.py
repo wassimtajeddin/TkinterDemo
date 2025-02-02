@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 
 root = tk.Tk()
 root.title("Hello World!")
@@ -16,7 +17,7 @@ entry.pack(pady=10)
 
 def on_button_click():
     name = entry.get()
-    print(f"Hello {name}!")
+    messagebox.showinfo(f"Hello {name}!")
 button = tk.Button(root, text="Click on me", command=on_button_click, font=("Arial", 10))
 button.pack(pady=10)
 
