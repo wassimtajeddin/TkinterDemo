@@ -16,8 +16,12 @@ entry= tk.Entry(root, width=30)
 entry.pack(pady=10)
 
 def on_button_click():
-    name = entry.get()
-    messagebox.showinfo(f"Hello {name}!")
+    name = entry.get().strip()
+    if name:
+        messagebox.showinfo("Greeting", f"Hello {name}!")
+    else:
+        messagebox.showwarning("Input Error", "Please enter your name.")
+
 button = tk.Button(root, text="Click on me", command=on_button_click, font=("Arial", 10))
 button.pack(pady=10)
 
